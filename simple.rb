@@ -26,8 +26,8 @@ db/schema.rb
 END
 
 # Execute generator
-generate("rspec")
-generate("i18n ja")
+generate :rspec
+generate :i18n, "ja" 
 
 # Commit git
 git :submodule => "init"
