@@ -15,6 +15,7 @@ plugin 'rspec-rails', :git => 'git://github.com/dchelimsky/rspec-rails.git', :su
 plugin 'i18n_generators', :git => 'git://github.com/amatsuda/i18n_generators.git', :submodule => true
 plugin 'restful-authentication', :git => 'git://github.com/technoweenie/restful-authentication.git', :submodule => true
 plugin 'open_id_authentication', :git => 'git://github.com/rails/open_id_authentication.git', :submodule => true
+plugin 'role_requirement', :git => 'git://github.com/timcharper/role_requirement.git', :submodule => true
 
 # Add .gitignore
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
@@ -34,6 +35,7 @@ gem 'ruby-openid'
 generate :rspec
 generate("authenticated", "user session")
 generate :i18n, "ja" 
+generate :roles, "Role User" 
 
 # Commit git
 git :submodule => "init"
