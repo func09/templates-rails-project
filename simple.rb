@@ -16,6 +16,7 @@ plugin 'i18n_generators', :git => 'git://github.com/amatsuda/i18n_generators.git
 
 # Add .gitignore
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
+run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
 file '.gitignore', <<-END
 .DS_Store
 log/*.log
